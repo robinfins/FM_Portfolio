@@ -61,7 +61,7 @@ function About() {
           <div className="profile-image-container">
             <div className="profile-image-wrapper">
               <img
-                src="/src/assets/FM_about_RobinFinsådal.jpg"
+                src="/FM_about_RobinFinsådal.jpg"
                 alt="Robin Finsådal"
                 className="profile-image"
               />

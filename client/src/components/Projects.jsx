@@ -6,7 +6,7 @@ function Projects() {
       id: 1,
       title: 'Byggmester G Finsådal',
       description: 'Photography, videography and profiling in collaboration with a local construction company.',
-      image: '/src/assets/FM_projects_card1.jpg',
+      image: '/FM_projects_card1.jpg',
       technologies: ['Photography', 'Videography', 'Social Media'],
       link: '#'
     },
@@ -14,7 +14,7 @@ function Projects() {
       id: 2,
       title: 'Sørlandet Klatresenter',
       description: 'Indoor drone photography and videography in collaboration with a climbing gym.',
-      image: '/src/assets/FM_projects_card2.jpg',
+      image: '/FM_projects_card2.jpg',
       technologies: ['Drone', 'Photography', 'Video Editing'],
       link: '#'
     },
@@ -22,7 +22,7 @@ function Projects() {
       id: 3,
       title: 'Motorsport',
       description: 'Photography during a sponsored motorsport event.',
-      image: '/src/assets/FM_projects_card3.jpg',
+      image: '/FM_projects_card3.jpg',
       technologies: ['Photography', 'Photo Editing'],
       link: '#'
     }

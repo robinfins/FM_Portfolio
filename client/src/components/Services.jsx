@@ -11,7 +11,7 @@ function Services() {
       description: 'Professional photo and video production for events, products, and brand storytelling. High-quality content that captures your vision.',
       icon: '📸',
       link: '/services/photography',
-      bgImage: '/src/assets/FM_services_card1.jpg'
+      bgImage: '/FM_services_card1.jpg'
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ function Services() {
       description: 'Stunning aerial photography and videography using advanced drone technology. Perfect for real estate, events, and landscapes.',
       icon: '🚁',
       link: '/services/drone',
-      bgImage: '/src/assets/FM_services_card2.jpg'
+      bgImage: '/FM_services_card2.jpg'
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ function Services() {
       description: 'Expert video editing, color grading, and post-production services. Transform raw footage into polished, professional content.',
       icon: '🎬',
       link: '/services/editing',
-      bgImage: '/src/assets/FM_services_card3.jpg'
+      bgImage: '/FM_services_card3.jpg'
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ function Services() {
       description: 'Authentic, engaging content created for social media platforms. Boost your brand with relatable, scroll-stopping UGC.',
       icon: '📱',
       link: '/services/ugc',
-      bgImage: '/src/assets/FM_services_card4.jpg'
+      bgImage: '/FM_services_card4.jpg'
     }
   ];
 
