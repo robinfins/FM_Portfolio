@@ -1,0 +1,8 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--dark-bg);
+}
+
+main {
+  min-height: calc(100vh - 80px);
+}

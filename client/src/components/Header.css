@@ -1,0 +1,212 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.header.scrolled {
+  background-color: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  transition: padding 0.4s ease;
+}
+
+.header.scrolled .header-content {
+  padding: 1rem 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2rem;
+  overflow: visible;
+}
+
+.logo-part {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: rgba(248, 250, 252, 0.95);
+  letter-spacing: 0.05em;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.logo-f {
+  position: relative;
+  z-index: 4;
+}
+
+.logo-insadal {
+  position: relative;
+  z-index: 3;
+  max-width: 200px;
+  opacity: 1;
+}
+
+.logo-space {
+  position: relative;
+  z-index: 2;
+  max-width: 200px;
+  opacity: 1;
+  min-width: 0.35rem;
+}
+
+.logo-m {
+  position: relative;
+  z-index: 4;
+}
+
+.logo-edia {
+  position: relative;
+  z-index: 1;
+  max-width: 200px;
+  opacity: 1;
+}
+
+/* Scrolled state animations */
+.header.scrolled .logo-part {
+  font-size: 1.375rem;
+}
+
+/* "edia" disappears first (M moves right over it) */
+.header.scrolled .logo-edia {
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+/* "insadal" disappears (collapses to the left) */
+.header.scrolled .logo-insadal {
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+/* Space disappears (collapses) */
+.header.scrolled .logo-space {
+  max-width: 0;
+  min-width: 0;
+  opacity: 0;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav a {
+  color: rgba(248, 250, 252, 0.8);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--light-text);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--light-text);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(2, 6, 23, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav.active {
+    max-height: 300px;
+  }
+
+  .header.scrolled .nav {
+    background-color: rgba(15, 23, 42, 0.98);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 0;
+  }
+
+  .nav li {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav li:last-child {
+    border-bottom: none;
+  }
+}
