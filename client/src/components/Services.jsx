@@ -72,6 +72,8 @@ function Services() {
               key={service.id}
               className="service-card"
               style={{ backgroundImage: `url(${service.bgImage})` }}
+              role="img"
+              aria-label={service.title}
             >
               <div className="service-card-overlay"></div>
               <div className="service-card-content">

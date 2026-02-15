@@ -10,6 +10,7 @@ function Projects() {
       title: 'Astro Website',
       description: 'Built a fast, modern website for a local construction company using Astro. Combining the best of static site generation with interactive components for a lightning-fast user experience.',
       image: websitesImg,
+      alt: 'Custom Astro website built for a construction company',
       technologies: ['Astro', 'React', 'Tailwind CSS'],
       linkText: 'View website',
       linkUrl: 'http://finsadal.no/',
@@ -19,6 +20,7 @@ function Projects() {
       title: 'Accountant App',
       description: 'A purpose-built application for accountants that streamlines client management by collecting and organizing customer data through integrated APIs.',
       image: accountantAppImg,
+      alt: 'Accountant application for client data management via APIs',
       technologies: ['API Integration', 'Data Management', 'UI/UX'],
       linkText: 'View repository',
       linkUrl: 'https://github.com/Revisjonssenter-dev/CompanyInfoImporter',
@@ -28,6 +30,7 @@ function Projects() {
       title: 'Bachelor Project',
       description: 'Internship with one of Norway\'s largest IT networks, researching and developing a digital twin of a farm. The projects explores different software and hardware solutions for photogrammetry, LiDAR scanning and Gaussian Splatting.',
       image: bachelorProjectImg,
+      alt: 'Bachelor project exploring LiDAR and photogrammetry for digital twin creation',
       technologies: ['LiDAR', 'Photogrammetry', 'Gaussian Splatting'],
       linkText: 'See more on LinkedIn',
       linkUrl: 'https://linkedin.com/in/robinfinsadal/',
@@ -45,7 +48,7 @@ function Projects() {
           {projects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.alt} />
               </div>
               <div className="project-content">
                 <h3>{project.title}</h3>

@@ -62,8 +62,8 @@ function About() {
           <div className="profile-image-container">
             <div className="profile-image-wrapper">
               <img
-                src="/FM_about_RobinFinsådal.jpg"
-                alt="Robin Finsådal"
+                src="/FM_about_RobinFinsådal.webp"
+                alt="Robin Finsådal - Founder and developer at Finsadal Media"
                 className="profile-image"
               />
               <div className="profile-image-overlay"></div>
