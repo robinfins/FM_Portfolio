@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './Services.css';
+import webDevImg from '../assets/FM-services-web-development.webp';
+import appDevImg from '../assets/FM-services-app-development.webp';
+import postProdImg from '../assets/FM-services-post-production.webp';
 
 function Services() {
   const sectionRef = useRef(null);
@@ -7,35 +10,27 @@ function Services() {
   const services = [
     {
       id: 1,
-      title: 'Photography & Videography',
-      description: 'Professional photo and video production for events, products, and brand storytelling. High-quality content that captures your vision.',
-      icon: '📸',
-      link: '/services/photography',
-      bgImage: '/FM_services_card1.jpg'
+      title: 'Web Development',
+      description: 'Custom-built websites tailored to your brand and goals. From sleek landing pages to full-scale platforms, I deliver fast, responsive, and modern web experiences that leave a lasting impression.',
+      icon: '💻',
+      link: '/services/web-development',
+      bgImage: webDevImg
     },
     {
       id: 2,
-      title: 'Aerial Drone Services',
-      description: 'Stunning aerial photography and videography using advanced drone technology. Perfect for real estate, events, and landscapes.',
-      icon: '🚁',
-      link: '/services/drone',
-      bgImage: '/FM_services_card2.jpg'
+      title: 'App Development',
+      description: 'Turning ideas into intuitive mobile and desktop applications. I build polished, user-friendly apps designed to solve real problems and scale with your business.',
+      icon: '📱',
+      link: '/services/app-development',
+      bgImage: appDevImg
     },
     {
       id: 3,
-      title: 'Video Editing & Post-Production',
-      description: 'Expert video editing, color grading, and post-production services. Transform raw footage into polished, professional content.',
+      title: 'Post Production',
+      description: 'Professional video and photo editing that brings your content to life. Whether it is color grading, motion graphics, retouching, or compositing, I refine your raw footage into polished, share-ready media.',
       icon: '🎬',
-      link: '/services/editing',
-      bgImage: '/FM_services_card3.jpg'
-    },
-    {
-      id: 4,
-      title: 'User Generated Content (UGC)',
-      description: 'Authentic, engaging content created for social media platforms. Boost your brand with relatable, scroll-stopping UGC.',
-      icon: '📱',
-      link: '/services/ugc',
-      bgImage: '/FM_services_card4.jpg'
+      link: '/services/post-production',
+      bgImage: postProdImg
     }
   ];
 
@@ -68,7 +63,7 @@ function Services() {
       <div className="container">
         <h2 className="section-title">Our Services</h2>
         <p className="section-subtitle">
-          Comprehensive media solutions tailored to your needs
+          Digital solutions tailored to your needs
         </p>
 
         <div className="services-grid">
@@ -83,9 +78,6 @@ function Services() {
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <a href={service.link} className="btn btn-primary service-btn">
-                  Learn More
-                </a>
               </div>
             </div>
           ))}

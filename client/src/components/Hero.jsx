@@ -77,11 +77,11 @@ function Hero() {
       <div className="container">
         <div className="hero-content" ref={contentRef}>
           <h1 className="hero-title">
-            Elevate your brand today
+            Bringing your ideas to life
           </h1>
           <p className="hero-subtitle">
-            We help create compelling visual stories through photography & videography
-            <br></br>Tell the world <strong>your story</strong> today
+            Web development, app development, and post production services
+            <br></br>Let's build <strong>something great</strong> together
           </p>
           <div className="hero-buttons">
             <button className="btn btn-primary" onClick={scrollToContact}>

@@ -137,6 +137,24 @@
   width: 100%;
 }
 
+.nav-contact-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-text) !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 0.5rem;
+  font-weight: 600 !important;
+  cursor: pointer;
+}
+
+.nav-contact-btn::after {
+  display: none !important;
+}
+
+.nav-contact-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: none;

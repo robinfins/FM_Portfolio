@@ -41,19 +41,20 @@ function About() {
         <div className="about-header">
           <h2 className="section-title">About Finsadal Media</h2>
           <p className="about-intro">
-            Creating compelling visual stories that elevate brands and captivate audiences
+            Building digital solutions and creative content that help businesses grow
           </p>
         </div>
 
         <div className="about-story-section">
           <p className="about-description">
-            Based in the Kristiansand region, Finsadal Media specializes in creating compelling visual content
-            that elevates brands in the digital landscape. We combine technical expertise with creative storytelling
-            to produce stunning photography, cinematic videography, and engaging social media content.
+            Based in the Kristiansand region, Finsadal Media delivers end-to-end digital services
+            that help businesses establish and grow their online presence. From custom websites and applications
+            to professional video and photo editing, I combine technical skill with creative thinking
+            to deliver results that stand out.
           </p>
           <p className="about-description">
-            Our mission is to showcase the power of visual media and help businesses increase their visibility
-            through professional content creation.
+            My mission is to provide reliable, high-quality digital solutions that help businesses
+            reach their goals and connect with their audience.
           </p>
         </div>
 
@@ -71,23 +72,23 @@ function About() {
 
           <div className="profile-info">
             <h3 className="profile-name">Robin Finsådal</h3>
-            <p className="profile-title">Founder & Creative Director</p>
+            <p className="profile-title">Founder & Developer</p>
             <div className="profile-details">
               <p>
-                With a passion for visual storytelling and years of experience in content creation,
-                I founded Finsadal Media to help businesses tell their stories through compelling visuals.
+                With a passion for technology and a background in both development and media production,
+                I founded Finsadal Media to help businesses succeed in the digital space.
               </p>
               <p>
-                From drone cinematography to social media content, I bring a unique perspective and
-                technical expertise to every project, ensuring your brand stands out in the digital landscape.
+                Whether it's building a website, developing an app, or editing video and photo content,
+                I bring dedication and attention to detail to every project.
               </p>
             </div>
             <div className="profile-skills">
-              <span className="skill-badge">Photography</span>
-              <span className="skill-badge">Videography</span>
-              <span className="skill-badge">Drone Pilot</span>
+              <span className="skill-badge">Web Development</span>
+              <span className="skill-badge">App Development</span>
               <span className="skill-badge">Video Editing</span>
-              <span className="skill-badge">Content Strategy</span>
+              <span className="skill-badge">Photo Editing</span>
+              <span className="skill-badge">UI/UX Design</span>
             </div>
           </div>
         </div>

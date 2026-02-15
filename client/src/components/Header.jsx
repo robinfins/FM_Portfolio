@@ -59,7 +59,7 @@ function Header() {
               <li><a onClick={() => scrollToSection('services')}>Services</a></li>
               <li><a onClick={() => scrollToSection('projects')}>Projects</a></li>
               <li><a onClick={() => scrollToSection('about')}>About</a></li>
-              <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+              <li><a onClick={() => scrollToSection('contact')} className="nav-contact-btn">Contact</a></li>
             </ul>
           </nav>
         </div>

@@ -1,30 +1,36 @@
 import './Projects.css';
+import websitesImg from '../assets/FM-projects-websites.webp';
+import accountantAppImg from '../assets/FM-projects-accountant-app.webp';
+import bachelorProjectImg from '../assets/FM-projects-bachelor-project.webp';
 
 function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'Byggmester G Finsådal',
-      description: 'Photography, videography and profiling in collaboration with a local construction company.',
-      image: '/FM_projects_card1.jpg',
-      technologies: ['Photography', 'Videography', 'Social Media'],
-      link: '#'
+      title: 'Astro Website',
+      description: 'Built a fast, modern website for a local construction company using Astro. Combining the best of static site generation with interactive components for a lightning-fast user experience.',
+      image: websitesImg,
+      technologies: ['Astro', 'React', 'Tailwind CSS'],
+      linkText: 'View website',
+      linkUrl: 'http://finsadal.no/',
     },
     {
       id: 2,
-      title: 'Sørlandet Klatresenter',
-      description: 'Indoor drone photography and videography in collaboration with a climbing gym.',
-      image: '/FM_projects_card2.jpg',
-      technologies: ['Drone', 'Photography', 'Video Editing'],
-      link: '#'
+      title: 'Accountant App',
+      description: 'A purpose-built application for accountants that streamlines client management by collecting and organizing customer data through integrated APIs.',
+      image: accountantAppImg,
+      technologies: ['API Integration', 'Data Management', 'UI/UX'],
+      linkText: 'View repository',
+      linkUrl: 'https://github.com/Revisjonssenter-dev/CompanyInfoImporter',
     },
     {
       id: 3,
-      title: 'Motorsport',
-      description: 'Photography during a sponsored motorsport event.',
-      image: '/FM_projects_card3.jpg',
-      technologies: ['Photography', 'Photo Editing'],
-      link: '#'
+      title: 'Bachelor Project',
+      description: 'Internship with one of Norway\'s largest IT networks, researching and developing a digital twin of a farm. The projects explores different software and hardware solutions for photogrammetry, LiDAR scanning and Gaussian Splatting.',
+      image: bachelorProjectImg,
+      technologies: ['LiDAR', 'Photogrammetry', 'Gaussian Splatting'],
+      linkText: 'See more on LinkedIn',
+      linkUrl: 'https://linkedin.com/in/robinfinsadal/',
     }
   ];
 
@@ -33,7 +39,7 @@ function Projects() {
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         <p className="section-subtitle">
-          A showcase of our recent creative work
+          A selection of recent work across development and media
         </p>
         <div className="projects-grid">
           {projects.map((project) => (
@@ -49,20 +55,16 @@ function Projects() {
                     <span key={index} className="tech-tag">{tech}</span>
                   ))}
                 </div>
-                <div className="project-links">
-                  <a href={project.link} className="btn btn-small">
-                    View Project
-                  </a>
-                </div>
+                {project.linkUrl && (
+                  <div className="project-links">
+                    <a href={project.linkUrl} target="_blank" rel="noopener noreferrer" className="btn btn-small">
+                      {project.linkText}
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="projects-cta">
-          <a href="/projects" className="btn btn-primary btn-large">
-            View All Projects
-          </a>
         </div>
       </div>
     </section>

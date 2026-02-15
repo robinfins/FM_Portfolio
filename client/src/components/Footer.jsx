@@ -15,7 +15,7 @@ function Footer() {
               <span className="footer-logo-part">M</span>
               <span className="footer-logo-part">EDIA</span>
             </div>
-            <p>Creating compelling visual stories that elevate brands</p>
+            <p>Digital solutions and creative content for your business</p>
           </div>
 
           <div className="footer-section">
