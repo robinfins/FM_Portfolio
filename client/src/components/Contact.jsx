@@ -7,7 +7,8 @@ function Contact() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    website: ''
   });
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,7 +37,8 @@ function Contact() {
           name: '',
           email: '',
           subject: '',
-          message: ''
+          message: '',
+          website: ''
         });
       }
     } catch (error) {
@@ -77,6 +79,16 @@ function Contact() {
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+            />
             {status.message && (
               <div className={`status-message ${status.type}`}>
                 {status.message}
