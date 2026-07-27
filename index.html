@@ -117,7 +117,7 @@
   <div style="position:fixed;inset:0;z-index:80;background:var(--ink);color:#f4f2ec;display:flex;flex-direction:column;padding:20px clamp(20px,6vw,40px) 36px;animation:floatIn .28s cubic-bezier(.2,.7,.3,1) both">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:52px">
       <span style="font-family:'Space Grotesk';font-weight:700;font-size:17px;display:flex;align-items:center;gap:9px"><span style="width:10px;height:10px;border-radius:2px;background:var(--accent)"></span>ROBIN FINSADAL</span>
-      <button onClick="{{ onCloseMenu }}" aria-label="Close menu" style="cursor:pointer;background:transparent;border:1px solid var(--ink-line);color:#f4f2ec;border-radius:999px;width:48px;height:48px;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--accent);border-color:var(--accent);color:#fff">✕</button>
+      <button onClick="{{ onCloseMenu }}" aria-label="Close menu" style="cursor:pointer;background:transparent;border:1px solid var(--ink-line);color:#f4f2ec;border-radius:999px;width:48px;height:48px;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--accent);border-color:var(--accent);color:#fff">✕︎</button>
     </div>
     <nav style="display:flex;flex-direction:column;gap:6px;margin-top:clamp(28px,8vh,64px);font-family:'Space Grotesk';font-weight:600;letter-spacing:-0.02em">
       <a href="#work" onClick="{{ onCloseMenu }}" style="color:#f4f2ec;font-size:clamp(32px,9vw,44px);padding:12px 0;border-bottom:1px solid var(--ink-line);transition:color .25s,padding-left .25s" style-hover="color:var(--accent-on-dark);padding-left:10px">Work</a>
@@ -132,7 +132,7 @@
 </sc-if>
 
 <!-- ============ HERO (fullscreen) ============ -->
-<section id="top" style="position:relative;height:100vh;height:100svh;max-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff">
+<section id="top" style="position:relative;height:100vh;height:100lvh;display:flex;align-items:center;overflow:hidden;color:#fff">
   <img src="uploads/hero.webp" alt="" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%">
   <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.45) 40%,rgba(0,0,0,0.12) 72%,rgba(0,0,0,0) 100%)"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 40%)"></div>
@@ -181,7 +181,7 @@
                 <span style="font-family:'Space Mono';font-size:11px;letter-spacing:0.03em;color:#6b6a60;border:1px solid #ddd9cd;border-radius:999px;padding:5px 11px;transition:border-color .25s,color .25s,background .25s" style-hover="border-color:var(--accent);color:var(--accent-deep);background:color-mix(in oklab, var(--accent), white 90%)">{{ t }}</span>
               </sc-for>
             </div>
-            <a href="{{ p.link }}" style="margin-top:auto;font-family:'Space Grotesk';font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:7px;align-self:flex-start" style-hover="gap:13px;color:var(--accent-deep)" target="_blank" rel="noopener noreferrer">View project ↗</a>
+            <a href="{{ p.link }}" style="margin-top:auto;font-family:'Space Grotesk';font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:7px;align-self:flex-start" style-hover="gap:13px;color:var(--accent-deep)" target="_blank" rel="noopener noreferrer">View project ↗︎</a>
           </div>
         </article>
       </sc-for>
@@ -516,7 +516,25 @@ class Component extends DCLogic {
     };
 
     build();
-    this._neuralResize = () => build();
+    // Mobile browsers fire resize when the URL bar collapses. Rebuilding the
+    // node field there makes the network visibly jump, so only rebuild on a
+    // real width change; height-only changes just rescale the canvas.
+    let lastW = w, lastH = h;
+    this._neuralResize = () => {
+      const rect = canvas.getBoundingClientRect();
+      if (Math.abs(rect.width - lastW) > 40) {
+        build(); lastW = rect.width; lastH = rect.height; return;
+      }
+      if (rect.height !== lastH && rect.height > 0) {
+        const scale = rect.height / (lastH || rect.height);
+        for (const n of nodes) { n.gy *= scale; n.hy *= scale; n.y *= scale; }
+        lastH = rect.height;
+      }
+      w = rect.width; h = rect.height;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
     window.addEventListener("resize", this._neuralResize);
     if (hero) {
       hero.addEventListener("pointermove", onMove);
